@@ -13,13 +13,13 @@ MIN_AREA = 1500
 cam = cv2.VideoCapture(0)
 
 # Get the default frame width and height
-frame_width = int(cam.get(cv2.CAP_PROP_FRAME_WIDTH))
-frame_height = int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT))
+# frame_width = int(cam.get(cv2.CAP_PROP_FRAME_WIDTH))
+# frame_height = int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # Define the codec and create VideoWriter object
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out_cam = cv2.VideoWriter('cam_output.mp4', fourcc, 20.0, (frame_width, frame_height))
-out_mask = cv2.VideoWriter('mask_output.mp4', fourcc, 20.0, (frame_width, frame_height), False)
+# fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+# out_cam = cv2.VideoWriter('cam_output.mp4', fourcc, 20.0, (frame_width, frame_height))
+# out_mask = cv2.VideoWriter('mask_output.mp4', fourcc, 20.0, (frame_width, frame_height), False)
 
 while True:
     ret, frame = cam.read()
@@ -60,13 +60,13 @@ while True:
     # Show results
     cv2.imshow("Webcam", frame)
     cv2.imshow("Blue Mask", mask)
-    out_cam.write(frame)
-    out_mask.write(mask)
+    # out_cam.write(frame)
+    # out_mask.write(mask)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 cam.release()
-out_cam.release()
-out_mask.release()
+# out_cam.release()
+# out_mask.release()
 cv2.destroyAllWindows()
