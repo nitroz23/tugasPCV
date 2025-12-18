@@ -27,12 +27,12 @@ def main():
     }
 
     # Get the default frame width and height
-    frame_width = int(cam.get(cv2.CAP_PROP_FRAME_WIDTH))
-    frame_height = int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    # frame_width = int(cam.get(cv2.CAP_PROP_FRAME_WIDTH))
+    # frame_height = int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
     # Define the codec and create VideoWriter object
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (frame_width, frame_height))
+    # fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    # out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (frame_width, frame_height))
 
     while True:
         ret, frame = cam.read()
@@ -66,7 +66,7 @@ def main():
             )
             y += 30
         
-        out.write(processed)
+        # out.write(processed)
 
         cv2.imshow("Camera", processed)
 
@@ -85,7 +85,7 @@ def main():
             break
 
     cam.release()
-    out.release()
+    # out.release()
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
